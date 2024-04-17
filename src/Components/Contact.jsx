@@ -1,6 +1,130 @@
 import styled from "styled-components"
 
 const Contact = () => {
+
+  const Wrapper = styled.section`
+    padding: 5rem 0;
+    background-color: ${({ theme }) => theme.colors.bg};
+
+    .container {
+      margin-top: 6rem;
+
+      .contact-form {
+        max-width: 50rem;
+        margin: auto;
+
+        .contact-inputs {
+          display: flex;
+          flex-direction: column;
+          gap: 3rem;
+
+          input[type="submit"] {
+            cursor: pointer;
+            transition: all 0.2s;
+
+            &:hover {
+              background-color: ${({ theme }) => theme.colors.white};
+              border: 1px solid ${({ theme }) => theme.colors.btn};
+              color: ${({ theme }) => theme.colors.btn};
+              transform: scale(0.9);
+            }
+          }
+        }
+      }
+    }
+
+    .common-heading {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    //? Set the map in the center of the screen
+    .cityMap {
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .common-heading {
+      text-transform: uppercase;
+      font-size: 4rem;
+      color: ${({ theme }) => theme.colors.heading};
+      margin-bottom: 3.4rem;
+    }
+
+    .container {
+      margin-top: 6rem;
+      text-align: center;
+
+      .contact-form {
+        max-width: 65rem;
+        margin: auto;
+
+        .contact {
+         display: flex;
+         flex-direction: column;
+         margin-bottom: 3.4rem;
+         gap: 30px;
+         max-width: 65rem;
+         margin: 0 auto;
+         align-items: center;
+         padding: 2rem 0;
+         background-color: ${({ theme }) => theme.colors.bg};
+         border: 0.1rem solid ${({ theme }) => theme.colors.black};
+         color: ${({ theme }) => theme.colors.text};
+         font-size: 1.4rem;
+         font-weight: 400;
+         line-height: 1.5;
+         letter-spacing: 0.1rem;
+         text-transform: uppercase;
+         transition: all 0.3s ease-in-out;
+         cursor: pointer;
+
+         input[type="submit"] {
+            cursor: pointer;
+            transition: all 0.2s;
+
+            &:hover {
+              background-color: ${({ theme }) => theme.colors.white};
+              border: 1px solid ${({ theme }) => theme.colors.btn};
+              color: ${({ theme }) => theme.colors.btn};
+              transform: scale(0.9);
+            }
+          }
+        }
+      }
+    }
+
+    input, textarea{
+      width: 100%;
+      max-width: calc(100% - 4.8rem);
+      color: ${({ theme }) => theme.colors.black};
+      padding: 1.6rem 2.4rem;
+      border: 1px solid ${({ theme }) => theme.colors.border};
+      /* text-transform: uppercase; */
+      box-shadow: ${({ theme }) => theme.colors.shadowSupport};
+    }
+
+    input[type="submit"]{
+      max-width: 16rem;
+      margin-top: 1rem;
+      width: 100%;
+      background-color: ${({ theme }) => theme.colors.btn};
+      color: ${({ theme }) => theme.colors.white};
+      padding: 1.4rem 2.2rem;
+      border-style: solid;
+      border-width: .1rem;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+  `;
+
   return (
     <Wrapper>
       <h2 className="common-heading">Feel Free to Contact Us</h2>
@@ -54,37 +178,5 @@ const Contact = () => {
     </Wrapper>
   )
 }
-
-const Wrapper = styled.section`
-  padding: 9rem 0 5rem 0;
-  text-align: center;
-
-  .container {
-    margin-top: 6rem;
-
-    .contact-form {
-      max-width: 50rem;
-      margin: auto;
-
-      .contact-inputs {
-        display: flex;
-        flex-direction: column;
-        gap: 3rem;
-
-        input[type="submit"] {
-          cursor: pointer;
-          transition: all 0.2s;
-
-          &:hover {
-            background-color: ${({ theme }) => theme.colors.white};
-            border: 1px solid ${({ theme }) => theme.colors.btn};
-            color: ${({ theme }) => theme.colors.btn};
-            transform: scale(0.9);
-          }
-        }
-      }
-    }
-  }
-`;
 
 export default Contact
